@@ -1,11 +1,11 @@
 var http = require("http");
 
 function startServer() {
-  function onRequest(require, respond) {
+  function onRequest(request, response) {
     console.log("Request recieved");
-    respond.writeHead(200, { "Content-Type" : "text/plain" });
-    respond.write("number three is a go");
-    respond.end();
+    response.writeHead(200, { "Content-Type" : "text/plain" });
+    response.write("number three is a go");
+    response.end();
   }
 
   http.createServer(onRequest).listen(8888);
